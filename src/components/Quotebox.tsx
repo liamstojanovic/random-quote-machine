@@ -38,23 +38,22 @@ const Quotebox = () => {
     }
 
     return (
-        <div id="quote-box">
-            <div id="text">
+        <div id="quote-box" className="flex flex-col items-center h-screen w-screen justify-center">
+            <div id="text" className="">
                 {quote.content}
             </div>
 
-            <div id="author">
+            <div id="author" className="">
                 <b>{quote.author}</b>
             </div>
 
-            <button id="new-quote" onClick={async () => setQuote(await getRandomQuote())}>
+            <button id="new-quote" className="" onClick={async () => setQuote(await getRandomQuote())}>
                 <i className="fa-solid fa-rotate-right"> New Quote</i>
             </button>
             
-            <p id="social">
+            <p id="social" className="">
                 <i className="fa-brands fa-square-twitter"></i>
             </p>
-            
         </div>
     )
 }
