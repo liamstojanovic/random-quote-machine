@@ -64,29 +64,32 @@ const Quotebox = () => {
     }
 
     return (
-        <div id="quote-box" className="flex flex-col items-center h-screen w-screen justify-center">
-            
-            <div id="text" className="">
-                <i className="fa-sharp fa-solid fa-quote-left"></i>
-                {quote.content}
-                <i className="fa-sharp fa-solid fa-quote-right"></i>
-            </div>
-            
+        <div id="wrapper" className="relative">
+            <div id="quote-box" className="flex flex-col items-center h-screen w-screen justify-center">
+                
+                <div id="text" className="text-xl">
+                    <i className="fa-sharp fa-solid fa-quote-left"></i>
+                    {quote.content}
+                    <i className="fa-sharp fa-solid fa-quote-right"></i>
+                </div>
+                
 
-            <div id="author" className="">
-                <b>{quote.author}</b>
-            </div>
+                <div id="author" className="text-lg italic">
+                    {quote.author}
+                </div>
 
-            <button id="new-quote" title="New Quote" onClick={async () => setQuote(await getRandomQuote())}>
-                <i className="fa-solid fa-rotate-right"></i> New Quote
-            </button>
-            
-            <p id="social" className="">
-                <a id="tweet-quote" href={generateTwitterUrl()}>
-                    <i className="fa-brands fa-square-twitter"></i>
-                </a>
-            </p>
+                <button id="new-quote" title="New Quote" onClick={async () => setQuote(await getRandomQuote())}>
+                    <i className="fa-solid fa-rotate-right"></i> New Quote
+                </button>
+                
+                <p id="social">
+                    <a id="tweet-quote" href={generateTwitterUrl()}>
+                        <i className="fa-brands fa-square-twitter"></i>
+                    </a>
+                </p>
+            </div>
         </div>
+
     )
 }
 
