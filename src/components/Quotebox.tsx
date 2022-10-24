@@ -90,6 +90,9 @@ const Quotebox = () => {
                     </p>
                 </div>
 
+                <p className="text-sm italic text-right">
+                    Created by Liam Stojanovic
+                </p>
             </div>
         </div>
 
