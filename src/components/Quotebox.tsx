@@ -64,29 +64,32 @@ const Quotebox = () => {
     }
 
     return (
-        <div id="wrapper" className="relative">
-            <div id="quote-box" className="flex flex-col items-center h-screen w-screen justify-center">
+        <div id="wrapper" className="relative flex flex-col items-center h-screen w-screen justify-center">
+            <div id="quote-box" className="justify-center m-4">
                 
-                <div id="text" className="text-xl">
+                <div id="text" className="text-xl text-center">
                     <i className="fa-sharp fa-solid fa-quote-left"></i>
-                    {quote.content}
+                    {" " + quote.content + " "}
                     <i className="fa-sharp fa-solid fa-quote-right"></i>
                 </div>
                 
 
-                <div id="author" className="text-lg italic">
-                    {quote.author}
+                <div id="author" className="text-lg italic text-right">
+                    {"- " + quote.author}
                 </div>
 
-                <button id="new-quote" title="New Quote" onClick={async () => setQuote(await getRandomQuote())}>
-                    <i className="fa-solid fa-rotate-right"></i> New Quote
-                </button>
-                
-                <p id="social">
-                    <a id="tweet-quote" href={generateTwitterUrl()}>
-                        <i className="fa-brands fa-square-twitter"></i>
-                    </a>
-                </p>
+                <div id="buttons" className="text-right border-t-2 m-2">
+                    <button id="new-quote" title="New Quote" onClick={async () => setQuote(await getRandomQuote())}>
+                        <i className="fa-solid fa-rotate-right"></i> New quote
+                    </button>
+                    
+                    <p id="social">
+                        <a id="tweet-quote" href={generateTwitterUrl()}>
+                            <i className="fa-brands fa-square-twitter"></i> Tweet this quote
+                        </a>
+                    </p>
+                </div>
+
             </div>
         </div>
 
